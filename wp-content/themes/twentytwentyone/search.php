@@ -49,16 +49,28 @@ if ( have_posts() ) {
         the_post();
         ?>
 	<div class="post">
-	<div class="post-thumbnail">
-	<?php
-	if ( has_post_thumbnail() ) {
-		the_post_thumbnail('thumbnail'); // Hiển thị ảnh đại diện nếu có
-	} else {
-		// Lấy đường dẫn ảnh mặc định từ thư mục assets/images
-		echo '<img src="' . get_template_directory_uri() . '/assets/images/your-image.jpg" alt="Default Thumbnail">';
-	}
-	?>
-</div>
+		<div class="post-thumbnail">
+		<?php
+		if ( has_post_thumbnail() ) {
+			// Hiển thị ảnh đại diện nếu có
+			the_post_thumbnail('thumbnail');
+		} else {
+			// Lấy nội dung bài viết
+			$content = get_the_content();
+			
+			// Tìm tất cả các thẻ <img> trong nội dung
+			preg_match_all('/<img[^>]+src=[\'"]?([^\'" >]+)[\'"]?[^>]*>/i', $content, $matches);
+			
+			if ( !empty($matches[1]) ) {
+				// Hiển thị ảnh đầu tiên tìm thấy trong nội dung
+				echo '<img src="' . esc_url($matches[1][0]) . '" alt="Post Image">';
+			} else {
+				// Ảnh mặc định nếu không có ảnh đại diện và không có ảnh trong nội dung
+				echo '<img src="' . get_template_directory_uri() . '/assets/images/default-image.jpg" alt="Default Thumbnail">';
+			}
+		}
+		?>
+		</div>
 		<div class="post-date">
 			<div class="day">
 				<?php echo get_the_date('d'); ?>
