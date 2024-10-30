@@ -107,28 +107,39 @@ body {
     <?php wp_body_open(); ?>
     
     <nav class="navbar">
-        <div class="nav-left">
-            <div class="logo">Group C</div>
-            <ul class="nav-links-left">
-                <li><a href="http://wordpress.local/">Home</a></li>
-                <li>
-                    <input type="text" placeholder="Search">
-                    <button>Submit</button>
-                </li>
-            </ul>
-        </div>
-        <ul class="nav-links-right">
-            <li><a href="http://wordpress.local/category/the-thao/">Thể thao</a></li>
-            <li><a href="http://wordpress.local/category/khoa-hoc/">Khoa học</a></li>
-            <li><a href="http://wordpress.local/category/tin-tuc/">Tin tức</a></li>
-            <li><span class="menu">Menu</span></li>
-            <li><span class="search-icon">🔍</span></li>
-            <li class="dropdown">
-                <span class="account">Account ▼</span>
+    <div class="nav-left">
+        <div class="logo">Group C</div>
+        <ul class="nav-links-left">
+            <li><a href="http://wordpress.local/">Home</a></li>
+            <li>
+                <input type="text" id="searchInput" placeholder="Search">
+                <button id="searchButton">Submit</button>
             </li>
         </ul>
-    </nav>
+    </div>
+    <ul class="nav-links-right">
+        <li><a href="http://wordpress.local/category/the-thao/">Thể thao</a></li>
+        <li><a href="http://wordpress.local/category/khoa-hoc/">Khoa học</a></li>
+        <li><a href="http://wordpress.local/category/tin-tuc/">Tin tức</a></li>
+        <li><span class="menu">Menu</span></li>
+        <li><span class="search-icon">🔍</span></li>
+        <li class="dropdown">
+            <span class="account">Account ▼</span>
+        </li>
+    </ul>
+</nav>
 
+<script>
+    // JavaScript cho chức năng tìm kiếm
+    document.getElementById("searchButton").addEventListener("click", function() {
+        var query = document.getElementById("searchInput").value;
+        if (query) {
+            window.location.href = "http://wordpress.local/?s=" + encodeURIComponent(query);
+        } else {
+            alert("Vui lòng nhập từ khóa để tìm kiếm.");
+        }
+    });
+</script>
 
 
 
