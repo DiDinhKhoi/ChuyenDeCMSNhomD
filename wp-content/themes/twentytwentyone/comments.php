@@ -97,6 +97,4 @@ comment_form(
 	)
 );
 ?>
-
-
 </div><!-- #comments -->
