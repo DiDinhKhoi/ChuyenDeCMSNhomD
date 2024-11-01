@@ -108,7 +108,7 @@ body {
     
     <nav class="navbar">
     <div class="nav-left">
-        <div class="logo">Group C</div>
+        <div class="logo">Group D</div>
         <ul class="nav-links-left">
             <li><a href="http://wordpress.local/">Home</a></li>
             <li>
