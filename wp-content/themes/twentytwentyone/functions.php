@@ -655,3 +655,14 @@ if ( ! function_exists( 'wp_get_list_item_separator' ) ) :
 		return __( ', ', 'twentytwentyone' );
 	}
 endif;
+function custom_comment_format($comment, $args, $depth) {
+    ?>
+    <li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
+        <div class="comment-body">
+            <div class="comment-content">
+                <?php comment_text(); ?>
+            </div>
+        </div>
+    </li>
+    <?php
+}

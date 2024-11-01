@@ -31,24 +31,15 @@ $twenty_twenty_one_comment_count = get_comments_number();
 	if ( have_comments() ) :
 		?>
 	<h2 class="comments-title">
-		<?php if ( '1' === $twenty_twenty_one_comment_count ) : ?>
-		<?php esc_html_e( '1 comment', 'twentytwentyone' ); ?>
-		<?php else : ?>
-		<?php
-				printf(
-					/* translators: %s: Comment count number. */
-					esc_html( _nx( '%s comment', '%s comments', $twenty_twenty_one_comment_count, 'Comments title', 'twentytwentyone' ) ),
-					esc_html( number_format_i18n( $twenty_twenty_one_comment_count ) )
-				);
-				?>
-		<?php endif; ?>
-	</h2><!-- .comments-title -->
+			<?php esc_html_e( 'Comments', 'twentytwentyone' ); ?>
+		</h2><!-- .comments-title -->
 
 	<ol class="comment-list">
 		<?php
 			wp_list_comments(
 				array(
-					'avatar_size' => 60,
+					'callback' => 'custom_comment_format',
+					'avatar_size' => 40,
 					'style'       => 'ol',
 					'short_ping'  => true,
 				)

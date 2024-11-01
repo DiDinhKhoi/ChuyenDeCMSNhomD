@@ -5922,3 +5922,43 @@ footer {
 
 
 
+/* -------------------Comments---------------- */
+/* Định dạng tiêu đề của phần Comments */
+.comments-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    border-bottom: 2px solid #ccc; /* Chỉnh sửa độ dài của gạch dưới */
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    display: inline-block; /* Để gạch dưới ngắn hơn */
+	width: 55px;
+}
+
+/* Định dạng danh sách bình luận */
+.comment-list {
+    list-style: none;
+    padding: 0;
+	margin-top: -10px;
+}
+
+/* Định dạng từng bình luận */
+.comment-list li {
+    padding: 5px;
+	margin: 0;
+    border-bottom: 1px solid #e0e0e0;
+	height: 40px;
+}
+
+/* Định dạng nội dung bình luận với màu xanh dương */
+.comment-list li .comment-content {
+    font-size: 16px;
+    color: #1e73be; /* Màu xanh dương cho nội dung bình luận */
+    margin: 0;
+}
+
+/* Ẩn hình đại diện và thông tin không cần thiết */
+.comment-author img,
+.comment-meta {
+    display: none;
+}
