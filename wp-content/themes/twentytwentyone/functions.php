@@ -364,6 +364,21 @@ function twenty_twenty_one_widgets_init() {
 	);
 }
 add_action( 'widgets_init', 'twenty_twenty_one_widgets_init' );
+function twenty_twenty_one_footer_2_widgets_init() {
+
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer 2', 'twentytwentyone' ),
+			'id'            => 'footer-2',
+			'description'   => esc_html__( 'Add widgets here to appear in your second footer.', 'twentytwentyone' ),
+			'before_widget' => '<section id="%1$s" class="footer-2-widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="footer-widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+}
+add_action( 'widgets_init', 'twenty_twenty_one_footer_2_widgets_init' );
 
 /**
  * Sets the content width in pixels, based on the theme's design and stylesheet.
@@ -655,3 +670,33 @@ if ( ! function_exists( 'wp_get_list_item_separator' ) ) :
 		return __( ', ', 'twentytwentyone' );
 	}
 endif;
+
+// Đăng ký các khu vực widget mới cho Archive và Comments
+function custom_sidebar_widgets_init() {
+    // Archive Sidebar
+    register_sidebar(
+        array(
+            'name'          => esc_html__( 'Archive', 'twentytwentyone' ),
+            'id'            => 'archive-sidebar',
+            'description'   => esc_html__( 'Add widgets here to appear in the Archive column.', 'twentytwentyone' ),
+            'before_widget' => '<section id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</section>',
+            'before_title'  => '<h2 class="widget-title">',
+            'after_title'   => '</h2>',
+        )
+    );
+
+    // Comments Sidebar
+    register_sidebar(
+        array(
+            'name'          => esc_html__( 'Comments', 'twentytwentyone' ),
+            'id'            => 'comments-sidebar',
+            'description'   => esc_html__( 'Add widgets here to appear in the Comments column.', 'twentytwentyone' ),
+            'before_widget' => '<section id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</section>',
+            'before_title'  => '<h2 class="widget-title">',
+            'after_title'   => '</h2>',
+        )
+    );
+}
+add_action( 'widgets_init', 'custom_sidebar_widgets_init' );

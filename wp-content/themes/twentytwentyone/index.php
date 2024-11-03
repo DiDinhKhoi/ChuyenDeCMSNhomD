@@ -22,24 +22,48 @@ get_header(); ?>
 	</header><!-- .page-header -->
 <?php endif; ?>
 
-<?php
-if ( have_posts() ) {
+<div class="container">
+	<div class="main-layout">
 
-	// Load posts loop.
-	while ( have_posts() ) {
-		the_post();
+		<!-- Archive Sidebar -->
+		<aside class="archive-sidebar">
+			<?php if ( is_active_sidebar( 'archive-sidebar' ) ) : ?>
+				<?php dynamic_sidebar( 'archive-sidebar' ); ?>
+			<?php endif; ?>
+		</aside><!-- .archive-sidebar -->
 
-		get_template_part( 'template-parts/content/content', get_theme_mod( 'display_excerpt_or_full_post', 'excerpt' ) );
-	}
+		<!-- Main Content -->
+		<main class="content">
+			<?php
+			if ( have_posts() ) {
 
-	// Previous/next page navigation.
-	twenty_twenty_one_the_posts_navigation();
+				// Load posts loop.
+				while ( have_posts() ) {
+					the_post();
 
-} else {
+					get_template_part( 'template-parts/content/content', get_theme_mod( 'display_excerpt_or_full_post', 'excerpt' ) );
+				}
 
-	// If no content, include the "No posts found" template.
-	get_template_part( 'template-parts/content/content-none' );
+				// Previous/next page navigation.
+				twenty_twenty_one_the_posts_navigation();
 
-}
+			} else {
 
-get_footer();
+				// If no content, include the "No posts found" template.
+				get_template_part( 'template-parts/content/content-none' );
+
+			}
+			?>
+		</main><!-- .content -->
+
+		<!-- Comments Sidebar -->
+		<aside class="comments-sidebar">
+			<?php if ( is_active_sidebar( 'comments-sidebar' ) ) : ?>
+				<?php dynamic_sidebar( 'comments-sidebar' ); ?>
+			<?php endif; ?>
+		</aside><!-- .comments-sidebar -->
+
+	</div><!-- .main-layout -->
+</div><!-- .container -->
+
+<?php get_footer(); ?>
