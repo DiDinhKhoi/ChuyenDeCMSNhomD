@@ -369,7 +369,7 @@ function twenty_twenty_one_footer_2_widgets_init() {
 	register_sidebar(
 		array(
 			'name'          => esc_html__( 'Footer 2', 'twentytwentyone' ),
-			'id'            => 'footer-2',
+			'id'            => 'sidebar-2',
 			'description'   => esc_html__( 'Add widgets here to appear in your second footer.', 'twentytwentyone' ),
 			'before_widget' => '<section id="%1$s" class="footer-2-widget %2$s">',
 			'after_widget'  => '</section>',
