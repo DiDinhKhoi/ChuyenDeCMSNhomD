@@ -142,6 +142,31 @@ if ( have_posts() ) {
 		</div>
 	</div>
 </div><!-- .search-page-container -->
+<!-- Phần Latest News -->
+<div class="last-posts-section">
+    <h4>Latest News</h4>
+    <ul class="timeline">
+        <?php
+        $recent_posts = new WP_Query(array(
+            'posts_per_page' => 3, // Hiển thị 3 bài viết mới nhất
+            'post_status' => 'publish'
+        ));
+        if ($recent_posts->have_posts()) :
+            while ($recent_posts->have_posts()) : $recent_posts->the_post();
+                ?>
+                <li>
+                    <a href="<?php the_permalink(); ?>" class="post-title"><?php the_title(); ?></a>
+                    <span class="post-date"><?php echo get_the_date('j F, Y'); ?></span>
+                    <p class="post-excerpt"><?php echo wp_trim_words(get_the_excerpt(), 100, '...'); ?></p>
+                </li>
+                <?php
+            endwhile;
+            wp_reset_postdata();
+        endif;
+        ?>
+    </ul>
+</div>
+<!-- Kết thúc Lasts News -->
 
 <?php
 } else {

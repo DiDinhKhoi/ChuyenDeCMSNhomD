@@ -6022,3 +6022,74 @@ footer {
     border-left: 2px solid #ddd; /* Đường viền dọc ở bên trái */
     padding-left: 15px;
 }
+
+
+/* Phần 15-Last Posts */
+/* Phong cách toàn màn hình cho phần Last Posts */
+.last-posts-section {
+    padding: 20px !important;
+    background-color: #fff !important;
+    margin-top: 20px !important;
+    width: 100vw !important; /* Đảm bảo nền trắng tràn ra hai bên */
+    margin-left: calc(50% - 50vw) !important; /* Đẩy sang trái để tràn ra 2 bên như container-fluid */
+    margin-right: calc(50% - 50vw) !important; /* Đẩy sang phải để tràn ra 2 bên như container-fluid */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+    box-sizing: border-box !important;
+}
+
+/* Ẩn dấu chấm mặc định của các mục trong danh sách */
+.timeline li::marker {
+    content: none; /* Ẩn dấu chấm */
+}
+
+/* Tạo ô tròn xanh cho mỗi bài viết */
+.timeline li::before {
+    content: '';
+    position: absolute;
+    left: -18px; /* Điều chỉnh để ô tròn nằm đè lên vị trí dấu chấm */
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    background-color: #0073e6; /* Màu xanh cho ô tròn */
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 2px #0073e6;
+}
+
+.timeline li {
+    margin-bottom: 20px;
+    padding-left: 30px; /* Thêm khoảng cách để canh chỉnh */
+    border-left: 2px solid #e0e0e0; /* Đường thẳng màu xám nhạt */
+    position: relative;
+}
+
+/* Phong cách tiêu đề bài viết */
+.post-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #0073e6; /* Màu xanh cho tiêu đề bài viết */
+    text-decoration: none; /* Bỏ gạch chân dưới tên bài viết */
+    margin-bottom: 5px; /* Thêm khoảng cách dưới tiêu đề */
+}
+
+/* Phong cách ngày tháng */
+.post-date {
+    font-size: 18px; /* Cùng kích cỡ font với tiêu đề bài viết */
+    color: #0073e6; /* Màu xanh cho ngày tháng */
+    display: inline-block;
+    float: right; /* Hiển thị ngày tháng ở bên phải */
+    margin-top: -24px; /* Đưa ngày tháng ngang với tên bài viết */
+}
+
+/* Phong cách đoạn trích */
+.post-excerpt {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+/* Bỏ phần "Continue..." sau dấu ba chấm */
+.post-excerpt::after {
+    content: ""; /* Bỏ phần nội dung thừa */
+}
