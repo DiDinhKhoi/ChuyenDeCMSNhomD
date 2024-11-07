@@ -9,8 +9,6 @@
  * @since Twenty Twenty-One 1.0
  */
 
-
-
 // This theme requires WordPress 5.3 or later.
 if ( version_compare( $GLOBALS['wp_version'], '5.3', '<' ) ) {
 	require get_template_directory() . '/inc/back-compat.php';
@@ -655,66 +653,3 @@ if ( ! function_exists( 'wp_get_list_item_separator' ) ) :
 		return __( ', ', 'twentytwentyone' );
 	}
 endif;
-
-// Đăng ký các khu vực widget mới cho Archive và Comments
-function custom_sidebar_widgets_init() {
-    // Archive Sidebar
-    register_sidebar(
-        array(
-            'name'          => esc_html__( 'Archive', 'twentytwentyone' ),
-            'id'            => 'archive-sidebar',
-            'description'   => esc_html__( 'Add widgets here to appear in the Archive column.', 'twentytwentyone' ),
-            'before_widget' => '<section id="%1$s" class="widget %2$s">',
-            'after_widget'  => '</section>',
-            'before_title'  => '<h2 class="widget-title">',
-            'after_title'   => '</h2>',
-        )
-    );
-
-    // Comments Sidebar
-    register_sidebar(
-        array(
-            'name'          => esc_html__( 'Comments', 'twentytwentyone' ),
-            'id'            => 'comments-sidebar',
-            'description'   => esc_html__( 'Add widgets here to appear in the Comments column.', 'twentytwentyone' ),
-            'before_widget' => '<section id="%1$s" class="widget %2$s">',
-            'after_widget'  => '</section>',
-            'before_title'  => '<h2 class="widget-title">',
-            'after_title'   => '</h2>',
-        )
-    );
-
-	// Sidebar Pages cho trang tìm kiếm
-    register_sidebar(
-        array(
-            'name'          => __( '13 Pages Sidebar', 'twentytwentyone' ),
-			'id'            => '13-pages-sidebar',
-			'description'   => __( 'Sidebar dành cho Pages bên trái.', 'twentytwentyone' ),
-			'before_widget' => '<div class="widget-area">',
-			'after_widget'  => '</div>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-        )
-    );
-
-    // Sidebar Comments cho trang tìm kiếm
-    register_sidebar(
-        array(
-            'name'          => __( '14 Comments Sidebar', 'twentytwentyone' ),
-			'id'            => '14-comments-sidebar',
-			'description'   => __( 'Sidebar dành cho Comments bên phải.', 'twentytwentyone' ),
-			'before_widget' => '<div class="widget-area">',
-			'after_widget'  => '</div>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-        )
-    );
-
-}
-add_action( 'widgets_init', 'custom_sidebar_widgets_init' );
-
-// Tùy chỉnh đoạn trích để loại bỏ "Continue reading"
-function custom_excerpt_more($more) {
-    return '...'; // Thay thế "Continue reading" bằng dấu ba chấm
-}
-add_filter('excerpt_more', 'custom_excerpt_more');
