@@ -57,51 +57,14 @@ get_header(); ?>
 			</div>
 		</div>
 		<div class="col-md-6">
-		<?php
-			if ( have_posts() ) {
-
-				// Load posts loop.
-				while ( have_posts() ) {
-					the_post();
-
-					get_template_part( 'template-parts/content/content', get_theme_mod( 'display_excerpt_or_full_post', 'excerpt' ) );
-				}
-
-				// Previous/next page navigation.
-				twenty_twenty_one_the_posts_navigation();
-
-			} else {
-
-				// If no content, include the "No posts found" template.
-				get_template_part( 'template-parts/content/content-none' );
-
-			}?>
+		
+			
 		</div>
 		<div class="col-md-3">
 			<div class = "recents_comments">
 				<div class="commentss">
-			<p class = "comment">Comment</p>
-				<?php
-					$args = array(
-						'number'      => 3,
-						'status'      => 'approve',
-						'order'       => 'DESC',
-						'orderby'     => 'comment_date',
-					);
-		
-					$latest_comments = get_comments($args);
-					if ($latest_comments) {
-						foreach ($latest_comments as $comment) {
-							$comment_post_id = $comment->comment_post_ID;
-							$comment_post_url = get_permalink($comment_post_id);		
-							echo '<div class="comment">';
-							echo '<p class="comment-content"><a href="' . $comment_post_url . '">' . $comment->comment_content . '</a></p>';
-							echo '</div>';
-						}
-					} else {
-						echo 'Không có comment nào.';
-					}
-				?>
+				
+				
 				</div>
 			</div>
 		</div>
