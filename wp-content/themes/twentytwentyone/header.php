@@ -104,32 +104,48 @@
         text-decoration: none;
         cursor: pointer;
     }
+
     .dropdown-menu {
-    display: none; /* Ẩn menu dropdown */
-    position: absolute; /* Để định vị đúng vị trí */
-    background-color: white; /* Nền trắng cho menu */
-    border: 1px solid #ccc; /* Viền cho menu */
-    z-index: 1000; /* Đảm bảo menu hiển thị trên các phần tử khác */
-    min-width: 150px; /* Đặt chiều rộng tối thiểu cho menu */
-    padding: 10px 0; /* Thêm khoảng cách cho các mục */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Thêm bóng cho menu */
-    border-radius: 5px; /* Bo góc cho menu */
-}
+        display: none;
+        /* Ẩn menu dropdown */
+        position: absolute;
+        /* Để định vị đúng vị trí */
+        background-color: white;
+        /* Nền trắng cho menu */
+        border: 1px solid #ccc;
+        /* Viền cho menu */
+        z-index: 1000;
+        /* Đảm bảo menu hiển thị trên các phần tử khác */
+        min-width: 150px;
+        /* Đặt chiều rộng tối thiểu cho menu */
+        padding: 10px 0;
+        /* Thêm khoảng cách cho các mục */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        /* Thêm bóng cho menu */
+        border-radius: 5px;
+        /* Bo góc cho menu */
+    }
 
-.dropdown-menu li {
-    padding: 10px 15px; /* Thêm khoảng cách cho mỗi mục */
-    list-style: none; /* Bỏ dấu chấm cho các mục */
-}
+    .dropdown-menu li {
+        padding: 10px 15px;
+        /* Thêm khoảng cách cho mỗi mục */
+        list-style: none;
+        /* Bỏ dấu chấm cho các mục */
+    }
 
-.dropdown-menu li a {
-    text-decoration: none; /* Bỏ gạch chân cho link */
-    color: black; /* Màu chữ cho các link */
-    display: block; /* Đảm bảo toàn bộ vùng chứa link nhấp được */
-}
+    .dropdown-menu li a {
+        text-decoration: none;
+        /* Bỏ gạch chân cho link */
+        color: black;
+        /* Màu chữ cho các link */
+        display: block;
+        /* Đảm bảo toàn bộ vùng chứa link nhấp được */
+    }
 
-.dropdown-menu li:hover {
-    background-color: #f0f0f0; /* Thay đổi nền khi hover vào mục */
-}
+    .dropdown-menu li:hover {
+        background-color: #f0f0f0;
+        /* Thay đổi nền khi hover vào mục */
+    }
 
 
     body {
@@ -215,22 +231,21 @@
     <?php wp_body_open(); ?>
 
     <nav class="navbar">
-    <div class="nav-left">
-        <div class="logo">Group D</div>
-        <ul class="nav-links-left">
-            <li><a href="http://wordpress.local/">Home</a></li>
-            <li>
-                <input type="text" id="searchInput" placeholder="Search">
-                <button id="searchButton">Submit</button>
-        
-    </div>
-    <ul class="nav-links-right">
-        <li><a href="http://wordpress.local/category/the-thao/">Thể thao</a></li>
-        <li><a href="http://wordpress.local/category/khoa-hoc/">Khoa học</a></li>
-        <li><a href="http://wordpress.local/category/tin-tuc/">Tin tức</a></li>
-        <li><span class="menu">Menu</span></li>
-        <li><span class="search-icon">🔍</span></li>
-        <?php if (is_user_logged_in()) : 
+        <div class="nav-left">
+            <div class="logo">Group D</div>
+            <ul class="nav-links-left">
+                <li><a href="http://wordpress.local/">Home</a></li>
+                <li>
+                    <input type="text" id="searchInput" placeholder="Search">
+                    <button id="searchButton">Submit</button>
+        </div>
+        <ul class="nav-links-right">
+            <li><a href="http://wordpress.local/category/the-thao/">Thể thao</a></li>
+            <li><a href="http://wordpress.local/category/khoa-hoc/">Khoa học</a></li>
+            <li><a href="http://wordpress.local/category/tin-tuc/">Tin tức</a></li>
+            <li><span class="menu">Menu</span></li>
+            <li><span class="search-icon">🔍</span></li>
+            <?php if (is_user_logged_in()) : 
             $current_user = wp_get_current_user(); // Lấy thông tin người dùng hiện tại
         ?>
             <!-- Hiển thị Account menu khi đã đăng nhập -->
@@ -238,18 +253,18 @@
                 <span class="account">Account ▼</span>
                 <ul class="dropdown-menu">
                     <li><a href="<?php echo get_permalink(get_option('profile_page_id')); ?>">
-                         <?php echo esc_html($current_user->display_name); ?>
-                    </a></li>
+                            <?php echo esc_html($current_user->display_name); ?>
+                        </a></li>
                     <li><a href="http://wordpress.local/wp-admin/profile.php">Settings</a></li>
                     <li><a href="<?php echo wp_logout_url(home_url()); ?>">Logout</a></li>
                 </ul>
             </li>
-        <?php else : ?>
+            <?php else : ?>
             <!-- Hiển thị link Login khi chưa đăng nhập -->
             <li><a href="<?php echo wp_login_url(); ?>">Login</a></li>
-        <?php endif; ?>
-    </ul>
-</nav>
+            <?php endif; ?>
+        </ul>
+    </nav>
 
     <script>
         // JavaScript cho chức năng tìm kiếm
@@ -262,21 +277,20 @@
             }
         });
 
-        document.addEventListener('DOMContentLoaded', function() {
-        const accountMenu = document.querySelector('.dropdown-menu');
-        const accountButton = document.querySelector('.account');
+        document.addEventListener('DOMContentLoaded', function () {
+            const accountMenu = document.querySelector('.dropdown-menu');
+            const accountButton = document.querySelector('.account');
 
-        accountButton.addEventListener('click', function() {
-            // Chuyển đổi giữa hiển thị và ẩn dropdown
-            accountMenu.style.display = accountMenu.style.display === 'block' ? 'none' : 'block';
+            accountButton.addEventListener('click', function () {
+                // Chuyển đổi giữa hiển thị và ẩn dropdown
+                accountMenu.style.display = accountMenu.style.display === 'block' ? 'none' : 'block';
+            });
+
+            // Đóng dropdown khi nhấp ra ngoài
+            window.addEventListener('click', function (event) {
+                if (!accountButton.contains(event.target) && !accountMenu.contains(event.target)) {
+                    accountMenu.style.display = 'none';
+                }
+            });
         });
-
-        // Đóng dropdown khi nhấp ra ngoài
-        window.addEventListener('click', function(event) {
-            if (!accountButton.contains(event.target) && !accountMenu.contains(event.target)) {
-                accountMenu.style.display = 'none';
-            }
-        });
-    });
-
     </script>
