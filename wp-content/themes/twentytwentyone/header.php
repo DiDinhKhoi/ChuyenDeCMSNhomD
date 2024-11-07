@@ -28,6 +28,7 @@
         box-sizing: border-box;
     }
 
+
     body {
         font-family: Arial, sans-serif;
     }
@@ -130,6 +131,83 @@
     background-color: #f0f0f0; /* Thay đổi nền khi hover vào mục */
 }
 
+
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        /* Căn giữa các thành phần trái và phải */
+        align-items: center;
+        background-color: #f5f5f5;
+        padding: 10px 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-left {
+        display: flex;
+        align-items: center;
+    }
+
+    .logo {
+        font-size: 24px;
+        font-weight: bold;
+        margin-right: 20px;
+    }
+
+    .nav-links-left {
+        display: flex;
+        align-items: center;
+        list-style: none;
+    }
+
+    .nav-links-left li {
+        margin-right: 20px;
+    }
+
+    .nav-links-left li a {
+        text-decoration: none;
+        color: #333;
+        font-size: 16px;
+    }
+
+    .nav-links-left li input[type="text"] {
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-right: 5px;
+    }
+
+    .nav-links-left li button {
+        padding: 5px 10px;
+        border: none;
+        background-color: #ccc;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .nav-links-right {
+        display: flex;
+        align-items: center;
+        list-style: none;
+    }
+
+    .nav-links-right li {
+        margin-right: 20px;
+    }
+
+
+    .nav-links-right li a,
+    .menu,
+    .search-icon,
+    .account {
+        font-size: 16px;
+        color: #333;
+        text-decoration: none;
+        cursor: pointer;
+    }
 </style>
 
 
@@ -144,6 +222,24 @@
             <li>
                 <input type="text" id="searchInput" placeholder="Search">
                 <button id="searchButton">Submit</button>
+        <div class="nav-left">
+            <div class="logo">Group D</div>
+            <ul class="nav-links-left">
+                <li><a href="http://wordpress.local/">Home</a></li>
+                <li>
+                    <input type="text" id="searchInput" placeholder="Search">
+                    <button id="searchButton">Submit</button>
+                </li>
+            </ul>
+        </div>
+        <ul class="nav-links-right">
+            <li><a href="http://wordpress.local/category/the-thao/">Thể thao</a></li>
+            <li><a href="http://wordpress.local/category/khoa-hoc/">Khoa học</a></li>
+            <li><a href="http://wordpress.local/category/tin-tuc/">Tin tức</a></li>
+            <li><span class="menu">Menu</span></li>
+            <li><span class="search-icon">🔍</span></li>
+            <li class="dropdown">
+                <span class="account">Account ▼</span>
             </li>
         </ul>
     </div>
@@ -184,7 +280,6 @@
                 alert("Vui lòng nhập từ khóa để tìm kiếm.");
             }
         });
-        //
 
         document.addEventListener('DOMContentLoaded', function() {
         const accountMenu = document.querySelector('.dropdown-menu');
@@ -202,4 +297,5 @@
             }
         });
     });
+
     </script>

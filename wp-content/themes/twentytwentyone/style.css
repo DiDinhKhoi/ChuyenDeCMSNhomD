@@ -5922,3 +5922,239 @@ footer {
 
 
 
+
+/* Phần 14-Comments */
+/* Bố cục Flex cho toàn bộ container */
+.search-page-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+/* Cột bên trái (Pages) */
+.sidebar-left {
+    flex: 1;
+    max-width: 20%;
+}
+
+/* Cột giữa (Search Result) */
+.main-content {
+    flex: 2;
+    max-width: 60%;
+}
+
+/* Cột bên phải (Comments) */
+.sidebar-right {
+    flex: 1;
+    max-width: 20%;
+    background-color: #ffffff;
+}
+
+/* CSS cho hộp bình luận */
+.comment-box {
+    margin-top: 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 0;
+    position: relative;
+}
+
+/* Định dạng cho avatar */
+.comment-box img {
+    width: 50px;
+    height: 50px;
+    border-radius: 0;
+    margin-right: 10px;
+}
+
+/* Định dạng cho phần bên trái avatar */
+.comment-box .media-left {
+    width: 65px;
+    padding-right: 10px;
+}
+
+/* Phần chứa nội dung bình luận */
+.comment-box .media-body {
+    flex: 1;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border: 1px solid #ddd;
+}
+
+/* Tiêu đề bình luận (tên người dùng) */
+.comment-box .media-heading {
+    font-size: 18px;
+    font-weight: 400;
+	margin-top: -18px;
+	padding: 10px;
+    margin-bottom: -1px;
+    position: relative;
+	margin-left: -10px;
+	background-color: #f5f5f5;
+	margin-top: -17px; /* Điều chỉnh để nền tràn lên phía trên */
+    margin-bottom: -5px; /* Điều chỉnh để nền tràn xuống phía dưới */
+    margin-left: -16px; /* Điều chỉnh để nền tràn sang trái */
+    margin-right: -16px; /* Điều chỉnh để nền tràn sang phải */
+}
+
+/* Tạo hình tam giác cho phần tiêu đề */
+.comment-box .media-heading:before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+	border-width: 1px 0 0 1px;
+    position: absolute;
+    top: 10px;
+    left: -6px;
+    transform: rotate(-45deg);
+}
+
+/* Nội dung bình luận */
+.comment-box .media-body p {
+	font-weight: 400;
+	font-size: 16px;
+    margin: 0;
+    color: #555;
+    line-height: 1.2;
+	padding-top: 10px;
+	position: relative; 
+	margin-left: -4px;
+	/* border-top: 1px solid #ddd; */
+	/* border-top: 1px solid #ddd;
+    width: 100%;
+    position: relative;
+    left: 10px;
+    right: 10px; */
+}
+
+.comment-box .media-body p::before {
+    content: "";
+    display: block;
+    height: 1px;  /* Độ dày của border-top */
+    background-color: #ddd;  /* Màu của border-top */
+    width: 120%;  /* Chiều dài của border-top */
+    position: absolute;  /* Cần thiết để di chuyển border */
+    left: -9%;  /* Di chuyển border-top sang trái (hoặc bạn có thể điều chỉnh giá trị này) */
+    top: 4px;  /* Đặt border-top ở trên cùng */
+}
+
+/* Bình luận trả lời (lùi vào) */
+.children .comment-box, .comment-reply .comment-box {
+    margin-left: 40px;
+    border-left: 2px solid #ddd;
+    padding-left: 15px;
+}
+
+
+.media-body {
+	margin-left: -10px;
+}
+
+
+
+
+/* Phần 15-Last Posts */
+/* Phong cách toàn màn hình cho phần Last Posts */
+.last-posts-section {
+    padding: 40px 110px !important;
+    background-color: #fff !important;
+    margin-top: 20px !important;
+    width: 100vw !important; /* Đảm bảo nền trắng tràn ra hai bên */
+    margin-left: calc(50% - 50vw) !important; /* Đẩy sang trái để tràn ra 2 bên như container-fluid */
+    margin-right: calc(50% - 50vw) !important; /* Đẩy sang phải để tràn ra 2 bên như container-fluid */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+    box-sizing: border-box !important;
+}
+
+/* Ẩn dấu chấm mặc định của các mục trong danh sách */
+.timeline li::marker {
+    content: none; /* Ẩn dấu chấm */
+}
+
+/* Tạo ô tròn xanh cho mỗi bài viết */
+.timeline li::after {
+    content: ' ';
+    position: absolute;
+    left: -32px; /* Đặt vị trí vòng tròn để nằm giữa đường kẻ và tên bài viết */
+    top: 5px; /* Đẩy vòng tròn lên một chút để căn giữa */
+    width: 20px;
+    height: 20px;
+    border: 3px solid #22c0e8; /* Màu xanh cho vòng tròn */
+	background-color: #fff; /* Màu nền cho vòng tròn để che đường kẻ */
+    border-radius: 50%;
+}
+
+.timeline li::before {
+    content: '';
+    position: absolute;
+    left: -23px; /* Vị trí ngang của đường kẻ để thẳng hàng với ô tròn */
+    top: 20px;
+    bottom: -25px; /* Để đường kẻ chạy từ đầu đến cuối mỗi mục */
+    width: 2px; /* Độ rộng của đường kẻ */
+    background-color: #e0e0e0; /* Màu của đường kẻ */
+}
+
+/* CSS riêng cho đường kẻ ở mục cuối cùng */
+.timeline li:last-child::before {
+    top: 0;
+    bottom: 0; /* Làm ngắn lại đường kẻ ở phần tử cuối cùng */
+}
+
+.timeline li {
+	margin-top: 15px;
+    margin-bottom: 20px;
+    padding-left: 10px; /* Thêm khoảng cách để canh chỉnh */
+    position: relative;
+}
+
+/* Phong cách tiêu đề bài viết */
+.post-title {
+    font-size: 18px;
+    font-weight: 400 !important;
+    color: #0073e6 !important; /* Màu xanh cho tiêu đề bài viết */
+    text-decoration: none; /* Bỏ gạch chân dưới tên bài viết */
+    margin-bottom: 5px; /* Thêm khoảng cách dưới tiêu đề */
+}
+
+/* Phong cách ngày tháng */
+.post-date {
+    font-size: 18px; /* Cùng kích cỡ font với tiêu đề bài viết */
+	font-weight: 400 !important;
+    color: #0073e6 !important; /* Màu xanh cho ngày tháng */
+    display: inline-block;
+    float: right; /* Hiển thị ngày tháng ở bên phải */
+	border-right: none !important;
+}
+
+/* Phong cách đoạn trích */
+.post-excerpt {
+    font-size: 17px !important;
+    color: #555;
+    line-height: 1.6;
+    font-weight: 400;
+	margin-right: 30px;
+	margin-top: 0 !important;
+}
+
+/* Hiệu ứng hover cho tên bài viết */
+.post-title:hover {
+    color: #005bb5 !important; /* Màu xanh đậm hơn */
+    text-decoration: underline; /* Gạch chân */
+}
+
+/* Hiệu ứng hover cho ngày tháng */
+.post-date:hover {
+    color: #005bb5 !important; /* Màu xanh đậm hơn */
+    text-decoration: underline; /* Gạch chân */
+}
+
+.post-excerpt a {
+    display: none !important; /* Ẩn liên kết "Continue reading" nếu nó là một thẻ <a> */
+}
+
