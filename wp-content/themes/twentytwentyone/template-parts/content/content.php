@@ -1,46 +1,49 @@
-<?php
-/**
- * Template part for displaying posts
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package WordPress
- * @subpackage Twenty_Twenty_One
- * @since Twenty Twenty-One 1.0
- */
+<!DOCTYPE html>
+<html lang="vi">
 
-?>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông Báo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php if ( is_singular() ) : ?>
-			<?php the_title( '<h1 class="entry-title default-max-width">', '</h1>' ); ?>
-		<?php else : ?>
-			<?php the_title( sprintf( '<h2 class="entry-title default-max-width"><a href="%s">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
-		<?php endif; ?>
+<body>
+    <style>
 
-		<?php twenty_twenty_one_post_thumbnail(); ?>
-	</header><!-- .entry-header -->
+    </style>
+    <div class="notifications">
+        <div class="notification-item">
+            <div class="date">
+                <span class="day">07</span>
+                <span class="month">Tháng 10</span>
+            </div>
+            <div class="content">
+                <h3><a href="http://127.0.0.1:82/2024/10/30/nganh-truyen-thong-mang-may-tinh/" target="_blank">Lịch
+                        Phỏng Vấn Chương Trình CNTT Nhật Bản 2021</a></h3>
+                <p>Các sinh viên có tên trong danh sách vui lòng có mặt theo lịch để tham dự phỏng vấn[...]</p>
+            </div>
+        </div>
 
-	<div class="entry-content">
-		<?php
-		the_content(
-			twenty_twenty_one_continue_reading_text()
-		);
 
-		wp_link_pages(
-			array(
-				'before'   => '<nav class="page-links" aria-label="' . esc_attr__( 'Page', 'twentytwentyone' ) . '">',
-				'after'    => '</nav>',
-				/* translators: %: Page number. */
-				'pagelink' => esc_html__( 'Page %', 'twentytwentyone' ),
-			)
-		);
+    </div>
+    <div class="notifications">
+        <div class="notification-item">
+            <div class="date">
+                <span class="day">10</span>
+                <span class="month">Tháng 12</span>
+            </div>
+            <div class="content">
+                <h3><a href="http://127.0.0.1:82/2024/10/30/nganh-truyen-thong-mang-may-tinh/" target="_blank">Messi lập
+                        cú đúp giúp inter Miami Vô địch MLS 2024</a></h3>
+                <p>Lionel Messi đã góp công lớn giúp Inter Miami lần đầu tiên giành chức vô địch Supporters' Shield khi
+                    lập cú đúp trong chiến thắng 3-2 trước Columbus Crew. Lionel Messi tiếp tục thi đấu thăng hoa khi
+                    lập [...]</p>
+            </div>
+        </div>
 
-		?>
-	</div><!-- .entry-content -->
 
-	<footer class="entry-footer default-max-width">
-		<?php twenty_twenty_one_entry_meta_footer(); ?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-<?php the_ID(); ?> -->
+    </div>
+</body>
+
+</html>
