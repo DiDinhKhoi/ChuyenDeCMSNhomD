@@ -222,26 +222,7 @@
             <li>
                 <input type="text" id="searchInput" placeholder="Search">
                 <button id="searchButton">Submit</button>
-        <div class="nav-left">
-            <div class="logo">Group D</div>
-            <ul class="nav-links-left">
-                <li><a href="http://wordpress.local/">Home</a></li>
-                <li>
-                    <input type="text" id="searchInput" placeholder="Search">
-                    <button id="searchButton">Submit</button>
-                </li>
-            </ul>
-        </div>
-        <ul class="nav-links-right">
-            <li><a href="http://wordpress.local/category/the-thao/">Thể thao</a></li>
-            <li><a href="http://wordpress.local/category/khoa-hoc/">Khoa học</a></li>
-            <li><a href="http://wordpress.local/category/tin-tuc/">Tin tức</a></li>
-            <li><span class="menu">Menu</span></li>
-            <li><span class="search-icon">🔍</span></li>
-            <li class="dropdown">
-                <span class="account">Account ▼</span>
-            </li>
-        </ul>
+        
     </div>
     <ul class="nav-links-right">
         <li><a href="http://wordpress.local/category/the-thao/">Thể thao</a></li>
