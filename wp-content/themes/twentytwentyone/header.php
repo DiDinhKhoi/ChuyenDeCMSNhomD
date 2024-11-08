@@ -11,286 +11,77 @@
  * @since Twenty Twenty-One 1.0
  */
 
-?>
-<!doctype html>
-<html <?php language_attributes(); ?>
-<?php twentytwentyone_the_html_classes(); ?>>
-
-<head>
-    <meta charset="<?php bloginfo( 'charset' ); ?>" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <?php wp_head(); ?>
-</head>
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-
-    body {
-        font-family: Arial, sans-serif;
-    }
-
-    .navbar {
-        display: flex;
-        justify-content: space-between;
-        /* Căn giữa các thành phần trái và phải */
-        align-items: center;
-        background-color: #f5f5f5;
-        padding: 10px 20px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    .nav-left {
-        display: flex;
-        align-items: center;
-    }
-
-    .logo {
-        font-size: 24px;
-        font-weight: bold;
-        margin-right: 20px;
-    }
-
-    .nav-links-left {
-        display: flex;
-        align-items: center;
-        list-style: none;
-    }
-
-    .nav-links-left li {
-        margin-right: 20px;
-    }
-
-    .nav-links-left li a {
-        text-decoration: none;
-        color: #333;
-        font-size: 16px;
-    }
-
-    .nav-links-left li input[type="text"] {
-        padding: 5px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        margin-right: 5px;
-    }
-
-    .nav-links-left li button {
-        padding: 5px 10px;
-        border: none;
-        background-color: #ccc;
-        border-radius: 4px;
-        cursor: pointer;
-    }
-
-    .nav-links-right {
-        display: flex;
-        align-items: center;
-        list-style: none;
-    }
-
-    .nav-links-right li {
-        margin-right: 20px;
-    }
-
-    .nav-links-right li a,
-    .menu,
-    .search-icon,
-    .account {
-        font-size: 16px;
-        color: #333;
-        text-decoration: none;
-        cursor: pointer;
-    }
-
-    .dropdown-menu {
-        display: none;
-        /* Ẩn menu dropdown */
-        position: absolute;
-        /* Để định vị đúng vị trí */
-        background-color: white;
-        /* Nền trắng cho menu */
-        border: 1px solid #ccc;
-        /* Viền cho menu */
-        z-index: 1000;
-        /* Đảm bảo menu hiển thị trên các phần tử khác */
-        min-width: 150px;
-        /* Đặt chiều rộng tối thiểu cho menu */
-        padding: 10px 0;
-        /* Thêm khoảng cách cho các mục */
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        /* Thêm bóng cho menu */
-        border-radius: 5px;
-        /* Bo góc cho menu */
-    }
-
-    .dropdown-menu li {
-        padding: 10px 15px;
-        /* Thêm khoảng cách cho mỗi mục */
-        list-style: none;
-        /* Bỏ dấu chấm cho các mục */
-    }
-
-    .dropdown-menu li a {
-        text-decoration: none;
-        /* Bỏ gạch chân cho link */
-        color: black;
-        /* Màu chữ cho các link */
-        display: block;
-        /* Đảm bảo toàn bộ vùng chứa link nhấp được */
-    }
-
-    .dropdown-menu li:hover {
-        background-color: #f0f0f0;
-        /* Thay đổi nền khi hover vào mục */
-    }
-
-
-    body {
-        font-family: Arial, sans-serif;
-    }
-
-    .navbar {
-        display: flex;
-        justify-content: space-between;
-        /* Căn giữa các thành phần trái và phải */
-        align-items: center;
-        background-color: #f5f5f5;
-        padding: 10px 20px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    .nav-left {
-        display: flex;
-        align-items: center;
-    }
-
-    .logo {
-        font-size: 24px;
-        font-weight: bold;
-        margin-right: 20px;
-    }
-
-    .nav-links-left {
-        display: flex;
-        align-items: center;
-        list-style: none;
-    }
-
-    .nav-links-left li {
-        margin-right: 20px;
-    }
-
-    .nav-links-left li a {
-        text-decoration: none;
-        color: #333;
-        font-size: 16px;
-    }
-
-    .nav-links-left li input[type="text"] {
-        padding: 5px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        margin-right: 5px;
-    }
-
-    .nav-links-left li button {
-        padding: 5px 10px;
-        border: none;
-        background-color: #ccc;
-        border-radius: 4px;
-        cursor: pointer;
-    }
-
-    .nav-links-right {
-        display: flex;
-        align-items: center;
-        list-style: none;
-    }
-
-    .nav-links-right li {
-        margin-right: 20px;
-    }
-
-
-    .nav-links-right li a,
-    .menu,
-    .search-icon,
-    .account {
-        font-size: 16px;
-        color: #333;
-        text-decoration: none;
-        cursor: pointer;
-    }
-</style>
-
-
-<body <?php body_class(); ?>>
-    <?php wp_body_open(); ?>
-
-    <nav class="navbar">
-        <div class="nav-left">
-            <div class="logo">Group D</div>
-            <ul class="nav-links-left">
-                <li><a href="http://wordpress.local/">Home</a></li>
-                <li>
-                    <input type="text" id="searchInput" placeholder="Search">
-                    <button id="searchButton">Submit</button>
-        </div>
-        <ul class="nav-links-right">
-            <li><a href="http://wordpress.local/category/the-thao/">Thể thao</a></li>
-            <li><a href="http://wordpress.local/category/khoa-hoc/">Khoa học</a></li>
-            <li><a href="http://wordpress.local/category/tin-tuc/">Tin tức</a></li>
-            <li><span class="menu">Menu</span></li>
-            <li><span class="search-icon">🔍</span></li>
-            <?php if (is_user_logged_in()) : 
-            $current_user = wp_get_current_user(); // Lấy thông tin người dùng hiện tại
-        ?>
-            <!-- Hiển thị Account menu khi đã đăng nhập -->
-            <li class="dropdown">
-                <span class="account">Account ▼</span>
-                <ul class="dropdown-menu">
-                    <li><a href="<?php echo get_permalink(get_option('profile_page_id')); ?>">
-                            <?php echo esc_html($current_user->display_name); ?>
-                        </a></li>
-                    <li><a href="http://wordpress.local/wp-admin/profile.php">Settings</a></li>
-                    <li><a href="<?php echo wp_logout_url(home_url()); ?>">Logout</a></li>
-                </ul>
-            </li>
-            <?php else : ?>
-            <!-- Hiển thị link Login khi chưa đăng nhập -->
-            <li><a href="<?php echo wp_login_url(); ?>">Login</a></li>
-            <?php endif; ?>
-        </ul>
-    </nav>
-
-    <script>
-        // JavaScript cho chức năng tìm kiếm
-        document.getElementById("searchButton").addEventListener("click", function () {
-            var query = document.getElementById("searchInput").value;
-            if (query) {
-                window.location.href = "http://wordpress.local/?s=" + encodeURIComponent(query);
-            } else {
-                alert("Vui lòng nhập từ khóa để tìm kiếm.");
-            }
-        });
-
-        document.addEventListener('DOMContentLoaded', function () {
-            const accountMenu = document.querySelector('.dropdown-menu');
-            const accountButton = document.querySelector('.account');
-
-            accountButton.addEventListener('click', function () {
-                // Chuyển đổi giữa hiển thị và ẩn dropdown
-                accountMenu.style.display = accountMenu.style.display === 'block' ? 'none' : 'block';
-            });
-
-            // Đóng dropdown khi nhấp ra ngoài
-            window.addEventListener('click', function (event) {
-                if (!accountButton.contains(event.target) && !accountMenu.contains(event.target)) {
-                    accountMenu.style.display = 'none';
-                }
-            });
-        });
-    </script>
+ ?>
+ <!doctype html>
+ <html <?php language_attributes(); ?> <?php twentytwentyone_the_html_classes(); ?>>
+ <head>
+	 <meta charset="<?php bloginfo( 'charset' ); ?>" />
+	 <meta name="viewport" content="width=device-width, initial-scale=1" />
+	 <?php wp_head(); ?>
+	 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+ </head>
+ 
+ <body <?php body_class(); ?>>
+ <?php wp_body_open(); ?>
+ <div class="hao-header">
+	 <nav class="nav-hea navbar navbar-expand-lg navbar-light bg-light">
+			 <a style="color: #777777;" class="group-d navbar-brand" href="/"><?php bloginfo('name'); ?></a>
+			 <button class="toggle-d navbar-toggler bg-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				 <span class="navbar-toggler-icon"></span>
+			 </button>
+ 
+		 <form class="collapse navbar-collapse" id="navbarSupportedContent" action="">
+			 <ul class="navbar-nav mr-auto">
+				 <li class="nav-item">
+						 <a style="color: #777777;background: #e7e7e7;" class="homee nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+				 </li>
+				 <div class="formm form-inline my-2 my-lg-0">
+					 <input name="s" class="hea-search" type="search" placeholder="Search" aria-label="Search">
+					 <button class="button-search btn" type="submit">Submit</button>
+				 </div>
+			 </ul>
+				 <?php get_template_part( 'template-parts/header/site-nav' ); ?>
+				 <li id="hea-li" style = "list-style: none;">
+					 <a class="hea-mobile nav-link dfr" href="#">
+						 <div class="hea-1">
+							 <i style="font-size: 20px;color: #000;position: relative;right: -2px;" class="fas fa-ellipsis-h">
+							 </i>
+							 <p class="hea-menu">Menu</p>
+						 </div>
+ 
+					 </a>
+				 </li>
+				 <li  style = "list-style: none;">
+					 <a class="hea nav-link dfr" href="/?s">
+						 <div class="hea-1">
+							 <i style="font-size: 20px;color: #000;position: relative; right: -4px;" class="fas fa-search"></i>
+						 
+								 <p type="submit" class="hea-menu">Search</p>
+						 
+						 </div>
+					 </a>
+				 </li>
+				 
+				 <li class="nav-item dropdown total-dropdown"  style = "list-style: none;">
+					 <a class="hea-mobile nav-link dfr" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+						 <div class="hea-1">
+							 <i style="font-size: 25px;color: #7c7c7d;position: relative;right: -15px;" class="fas-solid fas fa-user-circle"></i>
+							 <p class="dropdown-toggle">Account</p>
+						 </div>
+					 </a>
+					 <div class="dropdown-menu child-dropdown">
+						 <a class="dropdown-item" href="#">Action</a>
+						 <a class="dropdown-item" href="#">Another action</a>
+						 <div class="dropdown-divider"></div>
+						 <a class="dropdown-item" href="#">Something else here</a>
+					 </div>
+				 </li>
+			 </ul>
+		 </form>
+	 </nav>
+ </div>
+	 <div id="content" class="site-content">
+		 <div id="primary" class="content-area container-detail">
+			 <main id="main" class="site-main">
+ 

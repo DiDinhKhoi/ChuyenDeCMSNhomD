@@ -41,31 +41,10 @@ while ( have_posts() ) :
 
 	the_post_navigation(
 		array(
-			'next_text' => '<div class="nav-next custom-nav">
-								<div class="date">
-									<div class="day">' . get_the_date('d') . '</div>
-									<div class="separator">/</div>
-									<div class="month-year">
-										<div class="month">' . get_the_date('m') . '</div>
-										<div class="year">' . get_the_date('y') . '</div>
-									</div>
-								</div>
-								<p class="post-title">%title</p>
-							</div>',
-			'prev_text' => '<div class="nav-prev custom-nav">
-								<div class="date">
-									<div class="day">' . get_the_date('d') . '</div>
-									<div class="separator">/</div>
-									<div class="month-year">
-										<div class="month">' . get_the_date('m') . '</div>
-										<div class="year">' . get_the_date('y') . '</div>
-									</div>
-								</div>
-								<p class="post-title">Truyền Thông Và Mạng Máy Tính - Nghành Học Giàu Tiềm Năng</p>
-							</div>',
+			'next_text' => '<p class="meta-nav">' . $twentytwentyone_next_label . $twentytwentyone_next . '</p><p class="post-title">%title</p>',
+			'prev_text' => '<p class="meta-nav">' . $twentytwentyone_prev . $twentytwentyone_previous_label . '</p><p class="post-title">%title</p>',
 		)
 	);
-	
 endwhile; // End of the loop.
 
 get_footer();

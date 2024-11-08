@@ -13,7 +13,6 @@
  * @subpackage Twenty_Twenty_One
  * @since Twenty Twenty-One 1.0
  */
-
 get_header(); ?>
 
 <?php if ( is_home() && ! is_front_page() && ! empty( single_post_title( '', false ) ) ) : ?>
@@ -22,6 +21,7 @@ get_header(); ?>
 	</header><!-- .page-header -->
 <?php endif; ?>
 
+<<<<<<< HEAD
 <div class="container">
 	<div class="main-layout">
 
@@ -35,6 +35,15 @@ get_header(); ?>
 		<!-- Main Content -->
 		<main class="content">
 			<?php
+=======
+<div class="content-list-post ">
+	<div class="row">
+	<div class="col-md-3 list-top-views">
+			
+		</div>
+		<div class="col-md-6">
+		<?php
+>>>>>>> 9-Categories-Hung
 			if ( have_posts() ) {
 
 				// Load posts loop.
@@ -52,6 +61,7 @@ get_header(); ?>
 				// If no content, include the "No posts found" template.
 				get_template_part( 'template-parts/content/content-none' );
 
+<<<<<<< HEAD
 			}
 			?>
 		</main><!-- .content -->
@@ -67,3 +77,17 @@ get_header(); ?>
 </div><!-- .container -->
 
 <?php get_footer(); ?>
+=======
+			}?>
+		</div>
+		<div class="col-md-3">
+
+				
+			
+		</div>
+	</div>
+</div>
+<?php
+get_footer();
+
+>>>>>>> 9-Categories-Hung

@@ -9,8 +9,6 @@
  * @since Twenty Twenty-One 1.0
  */
 
-
-
 // This theme requires WordPress 5.3 or later.
 if ( version_compare( $GLOBALS['wp_version'], '5.3', '<' ) ) {
 	require get_template_directory() . '/inc/back-compat.php';
@@ -670,6 +668,7 @@ if ( ! function_exists( 'wp_get_list_item_separator' ) ) :
 		return __( ', ', 'twentytwentyone' );
 	}
 endif;
+<<<<<<< HEAD
 
 // Đăng ký các khu vực widget mới cho Archive và Comments
 function custom_sidebar_widgets_init() {
@@ -702,3 +701,5 @@ function custom_sidebar_widgets_init() {
 add_action( 'widgets_init', 'custom_sidebar_widgets_init' );
 
 
+=======
+>>>>>>> 9-Categories-Hung
