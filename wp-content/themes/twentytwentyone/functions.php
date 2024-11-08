@@ -364,6 +364,21 @@ function twenty_twenty_one_widgets_init() {
 	);
 }
 add_action( 'widgets_init', 'twenty_twenty_one_widgets_init' );
+function twenty_twenty_one_footer_2_widgets_init() {
+
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer 2', 'twentytwentyone' ),
+			'id'            => 'footer-2',
+			'description'   => esc_html__( 'Add widgets here to appear in your second footer.', 'twentytwentyone' ),
+			'before_widget' => '<section id="%1$s" class="footer-2-widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="footer-widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+}
+add_action( 'widgets_init', 'twenty_twenty_one_footer_2_widgets_init' );
 
 /**
  * Sets the content width in pixels, based on the theme's design and stylesheet.
@@ -683,38 +698,7 @@ function custom_sidebar_widgets_init() {
             'after_title'   => '</h2>',
         )
     );
-
-	// Sidebar Pages cho trang tìm kiếm
-    register_sidebar(
-        array(
-            'name'          => __( '13 Pages Sidebar', 'twentytwentyone' ),
-			'id'            => '13-pages-sidebar',
-			'description'   => __( 'Sidebar dành cho Pages bên trái.', 'twentytwentyone' ),
-			'before_widget' => '<div class="widget-area">',
-			'after_widget'  => '</div>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-        )
-    );
-
-    // Sidebar Comments cho trang tìm kiếm
-    register_sidebar(
-        array(
-            'name'          => __( '14 Comments Sidebar', 'twentytwentyone' ),
-			'id'            => '14-comments-sidebar',
-			'description'   => __( 'Sidebar dành cho Comments bên phải.', 'twentytwentyone' ),
-			'before_widget' => '<div class="widget-area">',
-			'after_widget'  => '</div>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-        )
-    );
-
 }
 add_action( 'widgets_init', 'custom_sidebar_widgets_init' );
 
-// Tùy chỉnh đoạn trích để loại bỏ "Continue reading"
-function custom_excerpt_more($more) {
-    return '...'; // Thay thế "Continue reading" bằng dấu ba chấm
-}
-add_filter('excerpt_more', 'custom_excerpt_more');
+

@@ -5923,6 +5923,7 @@ footer {
 
 
 
+
 /* Phần 14-Comments */
 /* Bố cục Flex cho toàn bộ container */
 .search-page-container {
@@ -5981,9 +5982,28 @@ footer {
 .comment-box .media-body {
     flex: 1;
     background-color: #f9f9f9;
+
+/* Hiển thị Archive và Comment */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.main-layout {
+    display: flex;
+    gap: 20px;
+}
+
+.archive-sidebar, .comments-sidebar {
+    width: 20%;
+    background-color: #d1e4dd;
+
     padding: 15px;
     border: 1px solid #ddd;
 }
+
 
 /* Tiêu đề bình luận (tên người dùng) */
 .comment-box .media-heading {
@@ -6156,5 +6176,100 @@ footer {
 
 .post-excerpt a {
     display: none !important; /* Ẩn liên kết "Continue reading" nếu nó là một thẻ <a> */
+}
+
+.content {
+    width: 60%;
+}
+
+
+/* Phần 12-Comment */
+
+.comments-sidebar {
+    background-color: #ffffff;
+    padding: 15px;
+    border: 1px solid #ddd;
+}
+
+.comments-sidebar .widget-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.comments-sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.comments-sidebar ul li {
+    padding: 5px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.comments-sidebar ul li a {
+    font-size: 16px;
+    color: #1e73be;
+    text-decoration: none;
+}
+
+.comments-sidebar ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Thêm css cho phần comment */
+/* Thêm gạch dưới cho tiêu đề "Comments" */
+.wp-block-heading {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    border-bottom: 2px solid #ccc; /* Điều chỉnh màu sắc và độ dày của gạch dưới */
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    display: inline-block;
+    width: 58px; /* Đặt độ dài gạch dưới thành 20px */
+}
+
+/* Ẩn avatar, tên người dùng, tên bài viết và ngày tháng */
+.wp-block-latest-comments__comment-avatar,
+.wp-block-latest-comments__comment-meta {
+    display: none !important; /* Ẩn toàn bộ thông tin trong lớp meta */
+}
+
+/* Tạo kiểu cho danh sách bình luận */
+.wp-block-latest-comments__comment-excerpt {
+    font-size: 14px;
+    color: #1e73be; /* Điều chỉnh màu chữ */
+    padding: 5px 0;
+    border-bottom: 1px solid #e0e0e0; /* Thêm đường kẻ dưới giữa các bình luận */
+	-left: 70px; /* Điều chỉnh giá trị này để lùi vào theo ý muốn */
+}
+
+/* Tạo kiểu cho liên kết trong bình luận */
+.wp-block-latest-comments__comment-excerpt a {
+    color: #1e73be; /* Màu của liên kết */
+    text-decoration: none;
+}
+
+.wp-block-latest-comments__comment-excerpt a:hover {
+    text-decoration: underline;
+}
+
+/* Lùi toàn bộ phần widget Recent Comments vào trong */
+#block-8.widget_recent_comments {
+    margin-left: -45px !important; /* Điều chỉnh giá trị để có khoảng cách mong muốn */
+}
+
+.wp-block-latest-comments__comment-excerpt {
+	padding-left: 12px;
+}
+
+.wp-block-latest-comments li{
+	margin-bottom: -37px !important;
 }
 
