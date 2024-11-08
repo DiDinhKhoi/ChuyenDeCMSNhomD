@@ -700,5 +700,8 @@ function custom_sidebar_widgets_init() {
     );
 }
 add_action( 'widgets_init', 'custom_sidebar_widgets_init' );
-
+function custom_excerpt_more($more) {
+    return '...'; // Thay thế "Continue reading" bằng dấu ba chấm
+}
+add_filter('excerpt_more', 'custom_excerpt_more');
 
