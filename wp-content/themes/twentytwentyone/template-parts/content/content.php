@@ -37,8 +37,7 @@
                 <h3><a href="http://127.0.0.1:82/2024/10/30/nganh-truyen-thong-mang-may-tinh/" target="_blank">Messi lập
                         cú đúp giúp inter Miami Vô địch MLS 2024</a></h3>
                 <p>Lionel Messi đã góp công lớn giúp Inter Miami lần đầu tiên giành chức vô địch Supporters' Shield khi
-                    lập cú đúp trong chiến thắng 3-2 trước Columbus Crew. Lionel Messi tiếp tục thi đấu thăng hoa khi
-                    lập [...]</p>
+                      [...]</p>
             </div>
         </div>
 
