@@ -97,6 +97,62 @@ Twenty Twenty-One is distributed under the terms of the GNU GPL.
 /* Categories 01 to 03 are the basics. */
 
 /* Variables */
+.notifications {
+    width: 600px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+}
+
+.notification-item {
+    display: flex;
+    padding-top: 20px;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+}
+
+.date {
+    margin-right: 30px;
+    border-right: 2px solid black;
+    padding-right: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Sắp xếp ngày và tháng theo chiều dọc */
+    align-items: center;
+}
+
+.date .day {
+    font-size: 4.5em; /* Làm cho số ngày lớn hơn */
+    font-weight: bold;
+    line-height: 1;
+}
+
+.date .month {
+    text-transform: uppercase;
+    font-size: 1em;
+    color: #666;
+    margin-top: 5px; /* Khoảng cách giữa ngày và tháng */
+}
+
+.content h3 {
+    margin: 0;
+}
+
+.content h3 a {
+    color: #0073e6;
+  
+    text-decoration: none;
+}
+
+.content h3 a:hover {
+    text-decoration: underline;
+}
+
+.content p {
+    color: #666;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
 :root {
 
 	/* Font Family */
