@@ -111,7 +111,7 @@ Twenty Twenty-One is distributed under the terms of the GNU GPL.
     padding-bottom: 20px;
 }
 
-.date {
+.notification-item>.date {
     margin-right: 30px;
     border-right: 2px solid black;
     padding-right: 20px;
@@ -122,7 +122,7 @@ Twenty Twenty-One is distributed under the terms of the GNU GPL.
     align-items: center;
 }
 
-.date .day {
+.notification-item>.date .day {
     font-size: 3.5em; /* Làm cho số ngày lớn hơn */
     font-weight: bold;
     line-height: 1;
