@@ -116,13 +116,14 @@ Twenty Twenty-One is distributed under the terms of the GNU GPL.
     border-right: 2px solid black;
     padding-right: 20px;
     text-align: center;
+	height: 200px;
     display: flex;
     flex-direction: column; /* Sắp xếp ngày và tháng theo chiều dọc */
     align-items: center;
 }
 
 .date .day {
-    font-size: 4.5em; /* Làm cho số ngày lớn hơn */
+    font-size: 3.5em; /* Làm cho số ngày lớn hơn */
     font-weight: bold;
     line-height: 1;
 }
