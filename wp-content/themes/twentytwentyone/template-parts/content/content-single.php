@@ -48,29 +48,38 @@
             <!-- <div class="row overview_thumb"></div> -->
             <div class="row maincontent">
 
-            </div>
-            <div class="entry-content mt-0 font-italic">
-                <div class="categories" style="width: 20%">
-                </div>
-                <?php
-				 // $post_categories = wp_get_post_categories(get_the_ID());
-				 // if (!empty($post_categories)) {
-				 //     foreach ($post_categories as $category_id) {
-				 //         $category = get_category($category_id);
-				 //         echo '<a href="' . esc_url(get_category_link($category->term_id)) . '">' . esc_html($category->name) . '</a>';
-				 //     }
-				 // }
-				 the_content();
-				 wp_link_pages(
-					 array(
-						 'before' => '<nav class="page-links" aria-label="' . esc_attr__('Page', 'twentytwentyone') . '">',
-						 'after' => '</nav>',
-						 /* translators: %: Page number. */
-						 'pagelink' => esc_html__('Page %', 'twentytwentyone'),
-					 )
-				 );
-				 ?>
-            </div><!-- .entry-content -->
+            <div class="entry-content mt-0">
+    <div class="categories" style="width: 20%">
+    </div>
+    <?php
+        // Lấy nội dung của bài viết và áp dụng bộ lọc nội dung
+        $content = apply_filters('the_content', get_the_content());
+
+        // Tách nội dung thành các đoạn dựa trên dấu xuống dòng
+        $paragraphs = preg_split('/(\r?\n)+/', $content);
+
+        // Hiển thị đoạn đầu tiên với chữ nghiêng
+        if (!empty($paragraphs[0])) {
+            echo '<p class="font-italic">' . wp_kses_post($paragraphs[0]) . '</p>';
+        }
+
+        // Hiển thị các đoạn còn lại với chữ bình thường
+        for ($i = 1; $i < count($paragraphs); $i++) {
+            if (!empty(trim($paragraphs[$i]))) { // Bỏ qua đoạn rỗng
+                echo '<p>' . wp_kses_post($paragraphs[$i]) . '</p>';
+            }
+        }
+
+        // Hiển thị các trang nếu bài viết có nhiều trang
+        wp_link_pages(
+            array(
+                'before' => '<nav class="page-links" aria-label="' . esc_attr__('Page', 'twentytwentyone') . '">',
+                'after' => '</nav>',
+                'pagelink' => esc_html__('Page %', 'twentytwentyone'),
+            )
+        );
+    ?>
+</div>
         </div>
         <div class="col-md-3">
 
