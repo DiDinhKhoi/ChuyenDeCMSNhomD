@@ -650,3 +650,7 @@ if ( ! function_exists( 'wp_get_list_item_separator' ) ) :
 		return __( ', ', 'twentytwentyone' );
 	}
 endif;
+function enqueue_custom_styles() {
+    wp_enqueue_style( 'custom-single-post', get_stylesheet_directory_uri() . '/assets/css/custom-color-overrides.css' );
+}
+add_action( 'wp_enqueue_scripts', 'enqueue_custom_styles' );
