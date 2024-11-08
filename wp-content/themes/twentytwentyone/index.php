@@ -42,6 +42,7 @@ get_header(); ?>
 			
 		</div>
 		<div class="col-md-6">
+<<<<<<< HEAD
 		<?php
 >>>>>>> 9-Categories-Hung
 			if ( have_posts() ) {
@@ -84,6 +85,18 @@ get_header(); ?>
 
 				
 			
+=======
+		
+			
+		</div>
+		<div class="col-md-3">
+			<div class = "recents_comments">
+				<div class="commentss">
+				
+				
+				</div>
+			</div>
+>>>>>>> 11-Archive-Hung
 		</div>
 	</div>
 </div>
