@@ -79,19 +79,35 @@ $twenty_twenty_one_comment_count = get_comments_number();
 		<?php endif; ?>
 	<?php endif; ?>
 
-	<?php
-comment_form(
-	array(
-		'title_reply'        => 'Make a Post', // Tiêu đề "Make a Post".
-		'title_reply_before' => '<h2 id="reply-title" class="comment-reply-title">',
-		'title_reply_after'  => '</h2>',
-		'comment_notes_after' => '', // Bỏ phần ghi chú sau form.
-		'comment_notes_before' => '', // Bỏ phần ghi chú trước form.
-		'logged_in_as' => '', // Bỏ thông tin "Đăng nhập với tên..."
-		'comment_field'      => '<p class="comment-form-comment"><textarea id="comment" name="comment" placeholder="What are you thinking..." rows="4" required="required"></textarea></p>',
-		'submit_button'      => '<button type="submit" class="btn-share">Share</button>',
-		'submit_field'       => '<div class="form-submit">%1$s %2$s</div>',
-	)
-);
-?>
+	<section class="card">
+    <div class="card-header">
+        <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="posts-tab" data-toggle="tab" href="#posts" role="tab" aria-controls="posts" aria-selected="true">Make a Post</a>
+            </li>
+        </ul>
+    </div>
+    <div class="card-body">
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="posts" role="tabpanel" aria-labelledby="posts-tab">
+                <?php
+                comment_form(
+                    array(
+                        'title_reply'        => '', // Bỏ tiêu đề "Make a Post" vì đã có tiêu đề bên ngoài.
+                        'title_reply_before' => '',
+                        'title_reply_after'  => '',
+                        'comment_notes_after' => '', // Bỏ ghi chú sau form.
+                        'comment_notes_before' => '', // Bỏ ghi chú trước form.
+                        'logged_in_as' => '', // Bỏ thông tin "Đăng nhập với tên..."
+                        'comment_field'      => '<div class="form-group"><textarea class="form-control" id="comment" name="comment" placeholder="What are you thinking..." rows="4" required="required"></textarea></div>',
+                        'submit_button' => '<button type="submit" class="btn btn-primary btn-share">Share</button>',
+                        'submit_field'       => '<div class="form-submit text-right">%1$s %2$s</div>',
+                    )
+                );
+                ?>
+            </div>
+        </div>
+    </div>
+</section>
+
 </div><!-- #comments -->
