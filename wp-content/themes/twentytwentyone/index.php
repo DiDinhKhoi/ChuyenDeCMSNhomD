@@ -13,7 +13,6 @@
  * @subpackage Twenty_Twenty_One
  * @since Twenty Twenty-One 1.0
  */
-
 get_header(); ?>
 
 <?php if ( is_home() && ! is_front_page() && ! empty( single_post_title( '', false ) ) ) : ?>
@@ -22,48 +21,83 @@ get_header(); ?>
 	</header><!-- .page-header -->
 <?php endif; ?>
 
-<div class="container">
-	<div class="main-layout">
+<div class="content-list-post">
+	<div class="row">
+		
+		<!-- Left Sidebar: Recent Posts -->
+		<div class="col-md-3 list-top-views">
+			<div class="border-row-top-views"> 
+				<div class="title-top-views">
+					<h2 class="title-top-views-in">
+						<a class="inner-title" href=""><?php echo get_option('widget_block')[5]['content']; ?></a>
+					</h2>
+				</div>
+				<div class="title-post-top-views">
+					<?php
+					$args = array(
+						'numberposts' => 8, 
+						'post_status' => 'publish', 
+						'orderby'     => 'date', 
+						'order'       => 'DESC'
+					);
 
-		<!-- Archive Sidebar -->
-		<aside class="archive-sidebar">
-			<?php if ( is_active_sidebar( 'archive-sidebar' ) ) : ?>
-				<?php dynamic_sidebar( 'archive-sidebar' ); ?>
-			<?php endif; ?>
-		</aside><!-- .archive-sidebar -->
-
-		<!-- Main Content -->
-		<main class="content">
+					$recent_posts = get_posts($args);
+					$count = 1;
+					foreach ($recent_posts as $post) {
+						setup_postdata($post);
+						?>
+							<div class="list-top-views">
+								<span class="number-top-views"><?php echo $count; ?></span>
+								<h3 class="list-title-top-views"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+							</div>
+						<?php
+						$count++;
+					}
+					wp_reset_postdata();
+					?>
+				</div>
+			</div>
+		</div><!-- End Left Sidebar -->
+		
+		<!-- Main Content Area -->
+		<div class="col-md-6">
 			<?php
 			if ( have_posts() ) {
-
-				// Load posts loop.
+				// Start loop to display posts
 				while ( have_posts() ) {
 					the_post();
-
+					// Load the post template
 					get_template_part( 'template-parts/content/content', get_theme_mod( 'display_excerpt_or_full_post', 'excerpt' ) );
 				}
-
-				// Previous/next page navigation.
+				// Previous/next page navigation
 				twenty_twenty_one_the_posts_navigation();
-
 			} else {
-
-				// If no content, include the "No posts found" template.
+				// If no posts found, show the "No posts found" template
 				get_template_part( 'template-parts/content/content-none' );
-
 			}
 			?>
-		</main><!-- .content -->
-
-		<!-- Comments Sidebar -->
-		<aside class="comments-sidebar">
-			<?php if ( is_active_sidebar( 'comments-sidebar' ) ) : ?>
-				<?php dynamic_sidebar( 'comments-sidebar' ); ?>
-			<?php endif; ?>
-		</aside><!-- .comments-sidebar -->
-
-	</div><!-- .main-layout -->
-</div><!-- .container -->
+		</div><!-- End Main Content Area -->
+		
+		<!-- Right Sidebar: Recent Comments -->
+		<div class="col-md-3 recents_comments">
+			<div class="commentss">
+				<h2>Recent Comments</h2>
+				<ul>
+					<?php
+					$comments = get_comments(array('number' => 5, 'status' => 'approve'));
+					foreach ($comments as $comment) :
+					?>
+						<li>
+							<a href="<?php echo get_comment_link($comment->comment_ID); ?>">
+								<?php echo get_comment_author($comment->comment_ID); ?>: <?php echo wp_trim_words($comment->comment_content, 10); ?>
+							</a>
+						</li>
+					<?php endforeach; ?>
+				</ul>
+			</div>
+		</div><!-- End Right Sidebar -->
+		
+	</div><!-- End Row -->
+</div><!-- End Content List Post -->
 
 <?php get_footer(); ?>
