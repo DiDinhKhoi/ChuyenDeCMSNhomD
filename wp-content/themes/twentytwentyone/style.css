@@ -6793,3 +6793,79 @@ padding-left: 30px;
 .wp-block-latest-comments li{
 	margin-bottom: -37px !important;
 }
+/*css phần search-results*/
+.search-results {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.post {
+    display: flex;
+    align-items: center;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff; /* Nền trắng cho toàn bộ bài viết */
+    margin-left: 100px;
+	margin-right: 100px;
+}
+
+.post-thumbnail img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    margin-right: 20px; /* Khoảng cách giữa hình ảnh và phần ngày tháng */
+}
+
+.post-date {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    padding: 10px 0;
+    font-family: Arial, sans-serif;
+    color: #555;
+    font-weight: bold;
+    text-align: center;
+    border-right: 1px solid #e0e0e0;
+    background-color: transparent; /* Nền trong suốt */
+    margin-right: 20px; /* Khoảng cách giữa phần ngày tháng và phần nội dung */
+}
+
+.post-date .day {
+    font-size: 24px;
+    color: #333;
+}
+
+.post-date .month {
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.post-content {
+    flex: 1;
+}
+
+.post-title a {
+    font-size: 18px;
+    font-weight: bold;
+    color: #007bff;
+    text-decoration: none;
+    line-height: 1.4;
+}
+
+.post-title a:hover {
+    text-decoration: underline;
+}
+
+.post-excerpt {
+    margin-top: 5px;
+    color: #666;
+    font-size: 14px;
+}
+
+
+
