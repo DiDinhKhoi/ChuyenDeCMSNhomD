@@ -6011,6 +6011,7 @@ footer {
     display: flex;
     align-items: flex-start;
     gap: 20px;
+}
 
 	.hao-header .total-dropdown {
 		position: relative;
@@ -6147,7 +6148,7 @@ footer {
     margin-bottom: -5px; /* Điều chỉnh để nền tràn xuống phía dưới */
     margin-left: 0; /* Điều chỉnh để nền tràn sang trái */
     margin-right: 0; /* Điều chỉnh để nền tràn sang phải */
-=======
+}
 .hao-header .hea-i-menu {
 	width: 20px;
 }
@@ -6512,6 +6513,7 @@ footer {
     position: relative;
     left: 10px;
     right: 10px; */
+}
 
 .detailpost .date-detail {
 	display: flex !important;
