@@ -7177,12 +7177,19 @@ padding-left: 30px;
 }
 
 /* Phong cách tiêu đề bài viết */
+.post-header {
+    display: flex; /* Sử dụng flexbox để căn chỉnh ngang */
+    justify-content: space-between; /* Đẩy post-title sang trái, post-date sang phải */
+    align-items: center; /* Căn giữa theo trục dọc */
+    margin-bottom: -20px; /* Thêm khoảng cách dưới phần tiêu đề */
+}
+
 .post-title {
     font-size: 18px;
     font-weight: 400 !important;
     color: #0073e6 !important; /* Màu xanh cho tiêu đề bài viết */
     text-decoration: none; /* Bỏ gạch chân dưới tên bài viết */
-    margin-bottom: 5px; /* Thêm khoảng cách dưới tiêu đề */
+	margin-top: -20px !important;
 }
 
 /* Phong cách ngày tháng */
@@ -7190,8 +7197,13 @@ padding-left: 30px;
     font-size: 18px; /* Cùng kích cỡ font với tiêu đề bài viết */
 	font-weight: 400 !important;
     color: #0073e6 !important; /* Màu xanh cho ngày tháng */
-    display: inline-block;
-    float: right; /* Hiển thị ngày tháng ở bên phải */
+	border-right: none !important;
+	text-decoration: none; /* Bỏ gạch chân */
+    display: inline; /* Hiển thị ngày tháng trên một dòng */
+    white-space: nowrap; /* Không cho phép xuống dòng */
+	margin-right: 55px !important;
+	margin-bottom: 12px !important;
+	margin-top: -6px;
 }
 
 /* Phong cách đoạn trích */
@@ -7200,7 +7212,6 @@ padding-left: 30px;
     color: #555;
     line-height: 1.6;
     font-weight: 400;
-	margin-right: 30px;
 	margin-top: 0 !important;
 }
 

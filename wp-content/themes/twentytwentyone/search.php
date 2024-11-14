@@ -155,8 +155,9 @@ if ( have_posts() ) {
             while ($recent_posts->have_posts()) : $recent_posts->the_post();
                 ?>
                 <li>
-                    <a href="<?php the_permalink(); ?>" class="post-title"><?php the_title(); ?></a>
-                    <span class="post-date"><?php echo get_the_date('j F, Y'); ?></span>
+                    <div class="post-header">
+                        <a href="<?php the_permalink(); ?>" class="post-title"><?php the_title(); ?></a>
+                        <span class="post-date"><?php echo get_the_date('j F, Y'); ?></span></div>
                     <p class="post-excerpt"><?php echo wp_trim_words(get_the_excerpt(), 100, '...'); ?></p>
                 </li>
                 <?php
