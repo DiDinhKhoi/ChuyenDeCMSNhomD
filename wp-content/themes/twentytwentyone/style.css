@@ -6861,14 +6861,14 @@ padding-left: 30px;
 /* Thêm css cho phần comment */
 /* Thêm gạch dưới cho tiêu đề "Comments" */
 .wp-block-heading {
-    font-size: 16px;
+    font-size: 16px !important;
     font-weight: 450 !important;
     color: #4c4b4b;
     border-bottom: 2px solid #ccc; /* Điều chỉnh màu sắc và độ dày của gạch dưới */
     padding-bottom: 5px;
     margin-bottom: 10px;
     display: inline-block;
-    width: 58px; /* Đặt độ dài gạch dưới thành 20px */
+    width: 48px; /* Đặt độ dài gạch dưới thành 20px */
 }
 
 /* Ẩn avatar, tên người dùng, tên bài viết và ngày tháng */
@@ -6898,7 +6898,7 @@ padding-left: 30px;
 
 /* Lùi toàn bộ phần widget Recent Comments vào trong */
 #block-8.widget_recent_comments {
-    margin-left: -45px !important; /* Điều chỉnh giá trị để có khoảng cách mong muốn */
+    margin-left: -48px !important; /* Điều chỉnh giá trị để có khoảng cách mong muốn */
 }
 
 .wp-block-latest-comments__comment-excerpt {
@@ -7106,9 +7106,9 @@ padding-left: 30px;
     display: block;
     height: 1px;  /* Độ dày của border-top */
     background-color: #ddd;  /* Màu của border-top */
-    width: 120%;  /* Chiều dài của border-top */
+    width: 116%;  /* Chiều dài của border-top */
     position: absolute;  /* Cần thiết để di chuyển border */
-    left: -9%;  /* Di chuyển border-top sang trái (hoặc bạn có thể điều chỉnh giá trị này) */
+    left: -7%;  /* Di chuyển border-top sang trái (hoặc bạn có thể điều chỉnh giá trị này) */
     top: 4px;  /* Đặt border-top ở trên cùng */
 }
 

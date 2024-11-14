@@ -78,24 +78,12 @@ get_header(); ?>
 			?>
 		</div><!-- End Main Content Area -->
 		
-		<!-- Right Sidebar: Recent Comments -->
-		<div class="col-md-3 recents_comments">
-			<div class="commentss">
-				<h2>Recent Comments</h2>
-				<ul>
-					<?php
-					$comments = get_comments(array('number' => 5, 'status' => 'approve'));
-					foreach ($comments as $comment) :
-					?>
-						<li>
-							<a href="<?php echo get_comment_link($comment->comment_ID); ?>">
-								<?php echo get_comment_author($comment->comment_ID); ?>: <?php echo wp_trim_words($comment->comment_content, 10); ?>
-							</a>
-						</li>
-					<?php endforeach; ?>
-				</ul>
-			</div>
-		</div><!-- End Right Sidebar -->
+		<!-- Comments Sidebar -->
+		<aside class="comments-sidebar">
+			<?php if ( is_active_sidebar( 'comments-sidebar' ) ) : ?>
+				<?php dynamic_sidebar( 'comments-sidebar' ); ?>
+			<?php endif; ?>
+		</aside><!-- .comments-sidebar -->
 		
 	</div><!-- End Row -->
 </div><!-- End Content List Post -->
