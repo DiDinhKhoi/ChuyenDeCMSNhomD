@@ -7231,5 +7231,20 @@ padding-left: 30px;
     display: none !important; /* Ẩn liên kết "Continue reading" nếu nó là một thẻ <a> */
 }
 
+/*timkiem*/
 
+.form-control-borderless {
+    border: none;
+}
+
+.form-control-borderless:hover, .form-control-borderless:active, .form-control-borderless:focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
+	
+}
+.btn-success{
+	margin-left: 20px;
+	background-color: #07e74e !important;
+}
 
